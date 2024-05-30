@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/bg-literal-building/static/css/main.535244c8.css",
+    "main.js": "/bg-literal-building/static/js/main.282243fe.js",
+    "index.html": "/bg-literal-building/index.html",
+    "main.535244c8.css.map": "/bg-literal-building/static/css/main.535244c8.css.map",
+    "main.282243fe.js.map": "/bg-literal-building/static/js/main.282243fe.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.535244c8.css",
+    "static/js/main.282243fe.js"
+  ]
+}
