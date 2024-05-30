@@ -20,7 +20,7 @@ const Account = () => {
     return (
       <div className="container mx-auto">
         <h2 className="text-2xl">Account</h2>
-        <p>You are not logged in.</p>
+        <p>You are not logged in. Log in or Sign up to view Account details</p>
         <button
           onClick={() => navigate("/login")}
           className="bg-orange-800 text-orange-200 px-4 py-2 rounded"
