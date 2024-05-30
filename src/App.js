@@ -1,10 +1,8 @@
-import logo from "./logo.svg";
-import "./App.css";
-
 function App() {
   return (
-    <div>
-      <h1 className="text-3l font-bold underline">Hello World!</h1>
+    <div className="App">
+      <h1 className="text-3xl text-center font-bold underline">Hello World!</h1>
+      <h2 className=""></h2>
     </div>
   );
 }
