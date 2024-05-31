@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/bg-literal-building/static/css/main.535244c8.css",
-    "main.js": "/bg-literal-building/static/js/main.282243fe.js",
+    "main.css": "/bg-literal-building/static/css/main.c31a3620.css",
+    "main.js": "/bg-literal-building/static/js/main.55b22848.js",
     "index.html": "/bg-literal-building/index.html",
-    "main.535244c8.css.map": "/bg-literal-building/static/css/main.535244c8.css.map",
-    "main.282243fe.js.map": "/bg-literal-building/static/js/main.282243fe.js.map"
+    "main.c31a3620.css.map": "/bg-literal-building/static/css/main.c31a3620.css.map",
+    "main.55b22848.js.map": "/bg-literal-building/static/js/main.55b22848.js.map"
   },
   "entrypoints": [
-    "static/css/main.535244c8.css",
-    "static/js/main.282243fe.js"
+    "static/css/main.c31a3620.css",
+    "static/js/main.55b22848.js"
   ]
 }
