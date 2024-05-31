@@ -30,4 +30,4 @@ const provider = new GoogleAuthProvider();
 
 export { auth, provider, signInWithPopup, signOut };
 
-export default app;
+// export default app;
