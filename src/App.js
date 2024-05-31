@@ -7,6 +7,7 @@ import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 
 import { Container } from "react-bootstrap";
+import { AuthProvider } from "./contexts/AuthContexts";
 
 function App() {
   return (
@@ -21,14 +22,16 @@ function App() {
         <Route
           path="/signup"
           element={
-            <Container
-              className="d-flex align-items-center justify-content-center"
-              style={{ minHeight: "90vh" }}
-            >
-              <div className="w-100" style={{ maxWidth: "400px" }}>
-                <SignUp />
-              </div>
-            </Container>
+            <AuthProvider>
+              <Container
+                className="d-flex align-items-center justify-content-center"
+                style={{ minHeight: "90vh" }}
+              >
+                <div className="w-100" style={{ maxWidth: "400px" }}>
+                  <SignUp />
+                </div>
+              </Container>
+            </AuthProvider>
           }
         />
         <Route path="/login" element={<Login />} />

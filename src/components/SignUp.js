@@ -3,6 +3,7 @@ import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import { Form, Card, Button } from "react-bootstrap";
+import { useAuth } from "../contexts/AuthContexts";
 
 // const SignUp = () => {
 //   const navigate = useNavigate();
@@ -30,9 +31,27 @@ import { Form, Card, Button } from "react-bootstrap";
 // };
 
 const SignUp = () => {
+  const navigate = useNavigate();
+
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
+  const { signup } = useAuth();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    signup(emailRef.current.value, passwordRef.current.value);
+  };
+
+  const handleSignUp = async () => {
+    try {
+      await signInWithPopup(auth, provider);
+      navigate("/account");
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <>
@@ -56,7 +75,13 @@ const SignUp = () => {
               className="w-100 mt-2 tw-border-0 tw-bg-orange-800"
               type="submit"
             >
-              Sign Up
+              Sign Up With Email
+            </Button>
+            <Button
+              onClick={handleSignUp}
+              className="w-100 mt-2 tw-border-0 tw-bg-orange-800"
+            >
+              Or Sign Up with Google
             </Button>
           </Form>
         </Card.Body>
