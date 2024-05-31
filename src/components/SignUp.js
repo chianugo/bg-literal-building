@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../firebase";
 import { useNavigate } from "react-router-dom";
-import { Form, Card, Button } from "react-bootstrap";
+import { Form, Card, Button, Alert } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContexts";
 
 // const SignUp = () => {
@@ -44,7 +44,7 @@ const SignUp = () => {
     e.preventDefault();
 
     if (passwordRef.current.value != passwordConfirmRef.current.value) {
-      return setError("Passowrds must match");
+      return setError("Passwords must match");
     }
     try {
       setError("");
@@ -73,6 +73,7 @@ const SignUp = () => {
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Sign Up</h2>
+          {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSignUpWithEmail}>
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>
@@ -87,6 +88,7 @@ const SignUp = () => {
               <Form.Control type="password" ref={passwordConfirmRef} required />
             </Form.Group>
             <Button
+              disabled={loading}
               className="w-100 mt-2 tw-border-0 tw-bg-orange-800"
               type="submit"
             >
