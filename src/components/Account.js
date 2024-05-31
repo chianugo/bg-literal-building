@@ -18,7 +18,7 @@ const Account = () => {
 
   if (!user) {
     return (
-      <div className="container mx-auto">
+      <div className="container mx-auto flex place-items-center">
         <h2 className="text-2xl">Account</h2>
         <p>You are not logged in. Log in or Sign up to view Account details</p>
         <button
