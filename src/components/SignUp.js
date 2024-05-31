@@ -52,7 +52,10 @@ const SignUp = () => {
               <Form.Label>Password Comfirmation</Form.Label>
               <Form.Control type="password" ref={passwordConfirmRef} required />
             </Form.Group>
-            <Button className="w-100" type="submit">
+            <Button
+              className="w-100 mt-2 tw-border-0 tw-bg-orange-800"
+              type="submit"
+            >
               Sign Up
             </Button>
           </Form>

@@ -6,6 +6,8 @@ import Account from "./components/Account";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 
+import { Container } from "react-bootstrap";
+
 function App() {
   return (
     <Router>
@@ -16,7 +18,19 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/blog" element={<h2>Blog Page</h2>} />
         <Route path="/account" element={<Account />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route
+          path="/signup"
+          element={
+            <Container
+              className="d-flex align-items-center justify-content-center"
+              style={{ minHeight: "90vh" }}
+            >
+              <div className="w-100" style={{ maxWidth: "400px" }}>
+                <SignUp />
+              </div>
+            </Container>
+          }
+        />
         <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
