@@ -8,7 +8,7 @@ import { useAuth } from "../contexts/AuthContexts";
 // const SignUp = () => {
 //   const navigate = useNavigate();
 
-//   const handleSignUp = async () => {
+//   const handleSignUpWithGoogle = async () => {
 //     try {
 //       await signInWithPopup(auth, provider);
 //       navigate("/account");
@@ -21,7 +21,7 @@ import { useAuth } from "../contexts/AuthContexts";
 //     <div className="container mx-auto">
 //       <h2 className="text-2xl">Sign Up</h2>
 //       <button
-//         onClick={handleSignUp}
+//         onClick={handleSignUpWithGoogle}
 //         className="bg-orange-800 text-orange-200 px-4 py-2 rounded"
 //       >
 //         Sign Up with Google
@@ -40,11 +40,11 @@ const SignUp = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleSignUpWithEmail = async (e) => {
     e.preventDefault();
 
     if (passwordRef.current.value != passwordConfirmRef.current.value) {
-      return setError("Passowrds must match ");
+      return setError("Passowrds must match");
     }
     try {
       setError("");
@@ -59,7 +59,7 @@ const SignUp = () => {
     signup(emailRef.current.value, passwordRef.current.value);
   };
 
-  const handleSignUp = async () => {
+  const handleSignUpWithGoogle = async () => {
     try {
       await signInWithPopup(auth, provider);
       navigate("/account");
@@ -73,7 +73,7 @@ const SignUp = () => {
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Sign Up</h2>
-          <Form>
+          <Form onSubmit={handleSignUpWithEmail}>
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>
               <Form.Control type="email" ref={emailRef} required />
@@ -93,7 +93,7 @@ const SignUp = () => {
               Sign Up With Email
             </Button>
             <Button
-              onClick={handleSignUp}
+              onClick={handleSignUpWithGoogle}
               className="w-100 mt-2 tw-border-0 tw-bg-orange-800"
             >
               Or Sign Up with Google
